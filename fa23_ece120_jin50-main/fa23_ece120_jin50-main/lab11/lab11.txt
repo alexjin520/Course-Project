@@ -1,0 +1,25 @@
+Question 1: Describe the errors that occur when trying to assemble lab11.asm. Identify the cause of each error.
+
+-L14: the starting location is missing the pseudo-op .ORIG
+-L17: the PC is attempted to be offset by x3010, which is more than can be held in 8 bits
+-L19: an extra comma was inserted between operands
+-L30: the PC is attempted to be offset by x300F, which is more than can be held in 8 bits
+-L32: BRpz should be BRzp
+-L35: the PC is attempted to be offset by x3011, which is more than can be held in 8 bits
+-L43: the pseudo-op .END was missing
+
+
+
+Question 2: For each label in your code (with all bugs fixed), write down the corresponding memory location. 
+
+x3006 OUTERLOOP
+x3007 INNERLOOP
+x3010 INPUT
+x3011 zero
+x3012 NEG1
+x3013 RESULT
+
+
+
+Question 3: Between using labels and explicit memory locations/offsets, which one makes the most sense, and why?
+Labels make more sense because they can be understood faster, and we will not try to decode hex.
